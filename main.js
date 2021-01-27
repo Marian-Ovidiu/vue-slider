@@ -7,9 +7,23 @@ var app = new Vue({
       'https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg',
       'https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg'
     ],
-    numeri : [1,2,3,4,5,6]
+    index : 0,
   },
   methods: {
-
+    next : function(){
+      if(this.index === this.images.length -1){
+        this.index = 0;
+      } else {
+        this.index += 1;
+        console.log(this.index);
+      }
+   },
+   prev : function(){
+     if(this.index === 0){
+       this.index = (this.images.length - 1);
+     } else {
+       this.index -= 1;
+     }
+   }
   }
 })
